@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { GoIssueOpened, GoIssueClosed, GoComment } from "react-icons/go";
 import { relativeDate } from "helpers/relativeDate";
-import { IssueItemProps } from "interfaces/index";
+import { IssueItemProps, LabelType, TODO_TYPEME } from "interfaces/index";
 import { useUserData } from "helpers/useUserData";
+import { Label } from "./Label";
 
 export function IssueItem({
   title,
@@ -28,10 +29,9 @@ export function IssueItem({
       <div className="issue-content">
         <span>
           <Link to={`/issue/${number}`}>{title}</Link>
-          {labels.map((label) => (
-            <span key={label.name} className={`label red`}>
-              {label.name}
-            </span>
+
+          {labels.map((label: LabelType | TODO_TYPEME) => (
+            <Label key={label} label={label} />
           ))}
         </span>
         <small>

@@ -1,6 +1,6 @@
 export type TODO_TYPEME = any;
 
-type Label = {
+export type LabelType = {
   id: string;
   name: string;
   color: string;
@@ -16,5 +16,5 @@ export type IssueItemProps = {
   commentCount?: number | any;
   createdBy: string;
   createdDate: Date;
-  labels: Label[];
+  labels: LabelType[];
 };
