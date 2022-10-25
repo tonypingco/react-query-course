@@ -23,9 +23,7 @@ export default function LabelList({
               <button
                 onClick={() => toggle(label.id)}
                 className={`label ${
-                  selected.includes((label as TODO_TYPEME).id)
-                    ? "selected "
-                    : ""
+                  selected.includes((label as any).id) ? "selected " : ""
                 }${label.color}`}
               >
                 {label.name}
