@@ -30,8 +30,8 @@ export function IssueItem({
         <span>
           <Link to={`/issue/${number}`}>{title}</Link>
 
-          {labels.map((label: LabelType | TODO_TYPEME) => (
-            <Label key={label} label={label} />
+          {labels.map((label: LabelType) => (
+            <Label key={label.name} label={label.id} />
           ))}
         </span>
         <small>

@@ -3,7 +3,7 @@ import { useLabelsData } from "helpers/useLabelsData";
 import { LabelType } from "interfaces/index";
 
 // TODO: check Type label here
-export function Label({ label }: { label: string | LabelType }) {
+export function Label({ label }: { label: string }) {
   const labelsQuery = useLabelsData();
   if (labelsQuery.isLoading) return null;
   const labelObj = labelsQuery.data.find(
