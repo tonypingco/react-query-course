@@ -6,15 +6,19 @@ export type LabelType = {
   color: string;
 };
 
-export type IssueItemProps = {
+export interface CommentProps {
+  comments?: string[];
+  commentCount?: number | any;
+  createdBy: string;
+  createdDate: Date;
+
+}
+
+export interface IssueItemProps extends CommentProps {
   id?: string;
   title: string;
   number: number;
   status: string;
   assignee: string;
-  comments?: string[];
-  commentCount?: number | any;
-  createdBy: string;
-  createdDate: Date;
   labels: LabelType[];
 };
